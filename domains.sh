@@ -5,7 +5,7 @@
 # The result csv will contains the domain, IP & Nameservers in each column
 
 # Give each column the relevant header titles
-echo "Domain Name,IP Address,HTTP Status, MX, MX ,Nameserver,Nameserver,Nameserver,Nameserver" > domains.csv
+echo "Domain Name,IP Address,HTTP Status,MX,MX,Nameserver,Nameserver,Nameserver,Nameserver" > domains.csv
 
 while read domain
 do
@@ -20,9 +20,6 @@ do
 
   #Get HTTP status code
   http=$( curl -w %{http_code} -s --output /dev/null --max-time 15 $domain)
-
-  # Use the line below to extract any information from whois
-  # ns=`whois $domain | grep "Name Server" | cut -d ":" -f 2 |  sed 's/ //' | sed -e :a -e '$!N;s/ \n/,/;ta'`
 
   echo "$domain"
 
