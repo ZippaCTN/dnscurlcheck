@@ -2,7 +2,7 @@
 # Put all the domain names in domains.txt, one per line
 # then run in the terminal: bash domains.sh
 # this will print each domain in the terminal as it looks it up
-# The result csv will contains the domain, IP & Nameservers in each column
+# The result csv will contain the domain, IP, MX records & Nameservers in each column
 
 # Give each column the relevant header titles
 echo "Domain Name,IP Address,HTTP Status,MX,MX,Nameserver,Nameserver,Nameserver,Nameserver" > domains.csv
